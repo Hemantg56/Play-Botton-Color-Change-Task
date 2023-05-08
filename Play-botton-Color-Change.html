@@ -19,6 +19,7 @@
             line-height: 110px;
             text-align: center;
             position: relative;
+            animation: dev 5s 1;
         }
         
         .main i {
@@ -34,45 +35,43 @@
             top: 0;
             left: 0;
             z-index: -1;
-            animation: hem 20s 1;
-            /* animation: dev 1s 1; */
+            animation: hem 5s 1;
         }
         
-        @keyframes hem {
+        .main .effect1 {
+            background-color: lightblue;
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -2;
+            animation: par 5s 1;
+        }
+        
+        @keyframes dev {
+            100% {
+                filter: hue-rotate(360deg);
+            }
+        }
+        
+        @keyframes par {
             0% {
                 transform: scale(1);
             }
-            10% {
-                transform: scale(1.6);
-                opacity: 0.7;
-                background-color: red;
-            }
-            20% {
-                background-color: blue;
-            }
-            30% {
-                background-color: green;
-            }
-            40% {
-                background-color: darkred;
-            }
-            50% {
-                background-color: dodgerblue;
-            }
-            60% {
-                background-color: indigo;
-            }
-            70% {
-                background-color: rgb(rgb(185, 103, 103), rgb(150, 64, 64), rgb(55, 55, 124));
-            }
-            80% {
-                background-color: gold;
-            }
-            90% {
-                background-color: khaki;
-            }
             100% {
-                background-color: peru;
+                transform: scale(2);
+                opacity: .4;
+                filter: hue-rotate(360deg);
+            }
+        }
+        
+        @keyframes hem {
+            100% {
+                transform: scale(1.6);
+                opacity: .5;
+                filter: hue-rotate(360deg);
             }
         }
     </style>
@@ -81,8 +80,10 @@
 <body>
 
     <div class="main">
-        <i class="fa-solid fa-play"></i>
-        <div class="effect"></div>
+
+        <div class="effect">
+        </div>
+        <div class="effect1"></div>
     </div>
 
 </body>
